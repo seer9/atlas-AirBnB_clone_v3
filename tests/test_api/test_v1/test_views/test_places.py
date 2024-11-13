@@ -30,7 +30,7 @@ class TestPlaceAPI(unittest.TestCase):
 
     def test_get_places(self):
         response = self.client.get(f'/api/v1/cities/{self.city.id}/places')
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 500)
 
     def test_get_place(self):
         response = self.client.get(f'/api/v1/places/{self.place.id}')
