@@ -119,6 +119,7 @@ class TestFileStorage(unittest.TestCase):
         self.assertEqual(json.loads(string), json.loads(js))
 
     def test_get(self):
+        """Test the get method"""
         obj = BaseModel()
         obj_id = obj.id
         self.storage.new(obj)
@@ -127,6 +128,7 @@ class TestFileStorage(unittest.TestCase):
         self.assertIsNone(self.storage.get(BaseModel, "nonexistent_id"))
 
     def test_count(self):
+        """Test the count method"""
         initial_count = self.storage.count()
         obj = BaseModel()
         self.storage.new(obj)
