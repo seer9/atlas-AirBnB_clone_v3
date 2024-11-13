@@ -99,6 +99,7 @@ class TestFileStorage(unittest.TestCase):
         """Test that save properly saves objects to file.json"""
 
     def test_get(self):
+        """test that get retrieves the correct object"""
         obj = BaseModel()
         obj_id = obj.id
         self.storage.new(obj)
@@ -107,6 +108,7 @@ class TestFileStorage(unittest.TestCase):
         self.assertIsNone(self.storage.get(BaseModel, "nonexistent_id"))
 
     def test_count(self):
+        """test that count returns the correct number of objects"""
         initial_count = self.storage.count()
         obj = BaseModel()
         self.storage.new(obj)
