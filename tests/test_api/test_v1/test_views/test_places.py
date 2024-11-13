@@ -9,7 +9,7 @@ from models.city import City
 from models.place import Place
 from models.user import User
 
-class TestPlaceAPI(unittest.TestCase):
+class TestPlace(unittest.TestCase):
     def setUp(self):
         self.client = app.test_client()
         self.user = User(email="test@example.com", password="password")

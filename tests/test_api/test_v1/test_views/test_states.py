@@ -7,7 +7,7 @@ from api.v1.app import app
 from models import storage
 from models.state import State
 
-class TestStateAPI(unittest.TestCase):
+class TestState(unittest.TestCase):
     def setUp(self):
         self.client = app.test_client()
         self.state = State(name="Test State")

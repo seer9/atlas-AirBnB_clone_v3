@@ -8,7 +8,7 @@ from models import storage
 from models.state import State
 from models.city import City
 
-class TestCityAPI(unittest.TestCase):
+class TestCity(unittest.TestCase):
     def setUp(self):
         self.client = app.test_client()
         self.state = State(name="Test State")

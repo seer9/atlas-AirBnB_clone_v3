@@ -9,7 +9,7 @@ from models.place import Place
 from models.review import Review
 from models.user import User
 
-class TestReviewAPI(unittest.TestCase):
+class TestReview(unittest.TestCase):
     def setUp(self):
         self.client = app.test_client()
         self.user = User(email="test@example.com", password="password")

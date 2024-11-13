@@ -7,7 +7,7 @@ from api.v1.app import app
 from models import storage
 from models.amenity import Amenity
 
-class TestAmenityAPI(unittest.TestCase):
+class TestAmenity(unittest.TestCase):
     def setUp(self):
         self.client = app.test_client()
         self.amenity = Amenity(name="Test Amenity")
