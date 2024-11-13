@@ -9,7 +9,8 @@ from models.review import Review
 from models.user import User
 
 
-@app_views.route('/places/<place_id>/reviews', methods=['GET'], strict_slashes=False)
+@app_views.route(
+        '/places/<place_id>/reviews', methods=['GET'], strict_slashes=False)
 def get_reviews(place_id):
     """Retrieves the list of all Review objects of a Place"""
     place = storage.get(Place, place_id)
@@ -28,7 +29,8 @@ def get_review(review_id):
     return jsonify(review.to_dict())
 
 
-@app_views.route('/reviews/<review_id>', methods=['DELETE'], strict_slashes=False)
+@app_views.route(
+        '/reviews/<review_id>', methods=['DELETE'], strict_slashes=False)
 def delete_review(review_id):
     """Deletes a Review object"""
     review = storage.get(Review, review_id)
@@ -39,7 +41,8 @@ def delete_review(review_id):
     return jsonify({}), 200
 
 
-@app_views.route('/places/<place_id>/reviews', methods=['POST'], strict_slashes=False)
+@app_views.route(
+        '/places/<place_id>/reviews', methods=['POST'], strict_slashes=False)
 def create_review(place_id):
     """Creates a Review"""
     place = storage.get(Place, place_id)
@@ -55,7 +58,8 @@ def create_review(place_id):
         abort(404)
     if 'text' not in data:
         abort(400, description="Missing text")
-    new_review = Review(place_id=place_id, user_id=data['user_id'], text=data['text'])
+    new_review = Review(
+        place_id=place_id, user_id=data['user_id'], text=data['text'])
     storage.new(new_review)
     storage.save()
     return jsonify(new_review.to_dict()), 201
