@@ -136,5 +136,6 @@ class TestFileStorage(unittest.TestCase):
         self.assertEqual(self.storage.count(), initial_count + 1)
         self.assertEqual(self.storage.count(BaseModel), initial_count + 1)
 
+
 if __name__ == "__main__":
     unittest.main()

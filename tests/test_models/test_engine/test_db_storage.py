@@ -80,7 +80,7 @@ class TestFileStorage(unittest.TestCase):
             os.remove("test_file.json")
         except BaseException:
             pass
-    
+
     @unittest.skipIf(models.storage_t != 'db', "not testing db storage")
     def test_all_returns_dict(self):
         """Test that all returns a dictionaty"""
