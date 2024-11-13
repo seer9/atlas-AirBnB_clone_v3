@@ -39,7 +39,6 @@ class DBStorage:
             HBNB_MYSQL_DB),
             pool_pre_ping=True),
 
-
     def all(self, cls=None):
         """query on the current database session"""
         new_dict = {}
