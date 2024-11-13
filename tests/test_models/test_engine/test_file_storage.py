@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-'''
-    Testing the file_storage module.
-'''
+""" Testing the file_storage module. """
 
 import os
 import time
